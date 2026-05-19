@@ -1,0 +1,18 @@
+{
+  "name": "devos-root",
+  "version": "1.0.0",
+  "description": "Root workspace workspace for DevOS platform",
+  "private": true,
+  "scripts": {
+    "install:client": "cd client && npm install --include=dev",
+    "install:server": "cd server && npm install",
+    "install-all": "npm run install:client && npm run install:server",
+    "build:client": "cd client && npm run build",
+    "build": "npm run install-all && npm run build:client",
+    "start": "cd server && node server.js",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
